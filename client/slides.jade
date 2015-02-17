@@ -2,8 +2,11 @@ template(name='slide1')
   +Surface size='[900, undefined]' align='[.5, .5]' origin='[.5, .5]'
     h2 Meteor Cape Town
     h1 Meteor & Famo.us
-    img.gravatar(src='/gravatar.png')
+    img.gravatar(src='/img/gravatar.png')
     h2 18th Feb, 2015
+    p These slides are available at:
+      br
+      a(href="http://meetup-fview-ct.meteor.com/") meetup-fview-ct.meteor.com
     .footer Gadi Cohen (gadicc)
 
 template(name='slide2')
@@ -13,8 +16,11 @@ template(name='slide2')
     ul
       li Ex Cape Townian (Cool BBS, ZaNet)
       li 13 yrs PHP & MySQL experience
+      li Currently working in a private start-up
       li Not a slidedeck master
+
     h3 Meteor community
+    img(src="/img/meteor-messageformat.jpg",style="border: 1px solid black; float: right; box-shadow: 1px 1px 3px #999")
     ul
       li
         a(href="http://www.meteorpedia.com/",target="_TOP") Meteorpedia
@@ -25,7 +31,7 @@ template(name='slide2')
       li
         a(href="https://atmospherejs.com/gadicohen",target="_TOP") ... and 21 others.
       br
-      li
+      li active in
         a(href="https://groups.google.com/forum/#!forum/meteor-talk",target="_TOP") meteor-talk
       li
         a(href="http://usermap.meteor.com/",target="_TOP") usermap
@@ -41,23 +47,24 @@ template(name='slide3')
       li
         b Web & App Design
         ul
-          li App Store
-          li Access to Phone API
           li Native feel
+          li Access to Phone API
+          li App Store
       br
       li
         b How?
         ul
           li Multiple code bases
-          li Phonegap
+          li PhoneGap / Cordova / Titanium
           li Famous
+    img(src="/img/laptop-tablet-mobile-phone.png")
     .footer gadicc
 
 template(name='slide4')
   +Surface size='[900, undefined]' align='[.5, .5]' origin='[.5, .5]'
     h2 Meetup Famous - What is Famous?
 
-    img(align="right",src="/famo-us-steve-and-mark-pic-780x520.jpg",style="height: 250px")
+    img(align="right",src="/img/famo-us-steve-and-mark-pic-780x520.jpg",style="height: 250px")
     p Where it came from?
 
     ul
@@ -67,16 +74,23 @@ template(name='slide4')
       br
       li Steve Newcomb, PowerSet, $100m
       li Mark Lu, Berkley, idea at 22.
+      li $30m in funding (vs Meteor's $11m)
 
     p And how it compares to what we currently use
     ul
       li DOM Layout vs Game Layout
       li What is hardware accelerated and what isn't
       li Physics Engine vs CSS / Tween animations
+      li requestAnimationFrame, dirty calculations
 
 template(name='slide5')
   +Surface size='[900, undefined]' align='[.5, .5]' origin='[.5, .5]'
     h2 Meetup Famous - Demos and Eye Candy
+    div(style="float: right;")
+      img(src="/img/famous-periodic.jpg",style="border: 1px solid black; width: 300px; box-shadow: 1px 1px 3px #999")
+      br
+      br
+      img(src="/img/demobo.jpg",style="border: 1px solid black; width: 300px; box-shadow: 1px 1px 3px #999")
     ul
       li
         a(href="https://www.youtube.com/watch?v=z9PPD9z2sPM") Sizzle Real
@@ -202,27 +216,37 @@ template(name='slide8')
     .footer gadicc
 
 template(name='slide9')
-  +Surface size='[900, undefined]' align='[.5, .5]' origin='[.5, .5]'
-    h2 Meetup Famous - Famous-Views
-    p "Doing Famo.us the Meteor Way"
-    ul
-      li <b>Primarily</b> - a low level wrapper around Famo.us
-      li Create the render tree with <i>markup</i> and <i>reuseable templates</i>
-      li Componentization via <i>inclusion</i> & <i>Template.x.rendered/events/helpers</i>
-      li <i>famousEach</i> connects reactive data sources how you'd expect (demo later)
-      li famousIf, 
-      li View attributes accept flexible input and reactive helpers
-      li Manages reactive computations for Meteor to avoid lost frames
-      li Works out of the box with iron-router
-    p and...
-    ul
-      li Wrappers around some of the few Famo.us provided views
-      li
-        a(href="http://famous-views.meteor.com/plugins") 13 powerful plugins
-        | and counting.
-      li
-        a(href="https://github.com/meteor-useraccounts/famous-wrapper/") useraccounts:famous-wrapper
-    .footer gadicc
+  +Modifier
+    +Surface size='[900, undefined]' align='[.5, .5]' origin='[.5, .5]'
+      h2 Meetup Famous - Famous-Views
+      p
+        i.fa.fa-download
+        | 4,463 &nbsp;&nbsp;
+        i.fa.fa-star
+        | 64 (Atmosphere) &nbsp;&nbsp;
+        i.fa.fa-star
+        | 270 (GitHub)
+      p "Doing Famo.us the Meteor Way"
+
+      ul
+        li <b>Primarily</b> - a low level wrapper around Famo.us
+        li Create the render tree with <i>markup</i> and <i>reuseable templates</i>
+        li Componentization via <i>inclusion</i> & <i>Template.x.rendered/events/helpers</i>
+        li <i>famousEach</i> connects reactive data sources how you'd expect (demo later)
+        li famousIf - as above for the Render Tree vs the DOM
+        li View attributes accept flexible input and reactive helpers
+        li Manages reactive computations for Meteor to avoid lost frames
+        li Works out of the box with iron-router (e.g. this slidedeck)
+      ul
+        li Wrappers around some of the few Famo.us provided views
+        li
+          a(href="http://famous-views.meteor.com/plugins") 13 powerful plugins
+          | and counting.
+        li
+          a(href="https://github.com/meteor-useraccounts/famous-wrapper/") useraccounts:famous-wrapper
+      .footer gadicc
+    +Surface size="[230,230]" align='[0.93,0.93]' origin='[1,1]'
+      img(src="/img/meteor_famous_view_logo.svg",style="width:100%")
 
 template(name='slide10')
   +Surface size='[900, undefined]' align='[.5, .5]' origin='[.5, .5]'
@@ -278,25 +302,139 @@ template(name='slide11')
         |   +famousContext id="mainCtx"
         |     +Surface
         |       | I am a full size Surface
+    p Next page: inline vs inclusion
+
+template(name='slide12')
+  +Surface size='[900, undefined]' align='[.5, .5]' origin='[.5, .5]'
+    h2 Meetup Famous - Getting Started
+    +snippet lang="spacebars"
+      | &lt;body>
+      |   {{dstache}}#famousContext id="mainCtx"}}
+      |     {{dstache}}#Surface}}
+      |       I am a full size Surface
+      |     {{dstache}}/Surface}}
+      |   {{dstache}}/famousContext}}
+      | &lt;/body>
+    +snippet lang="spacebars"
+      | &lt;body>
+      |   {{dstache}}#famousContext id="mainCtx"}}
+      |     {{dstache}}>Surface template="mySurface"}}
+      |   {{dstache}}/famousContext}}
+      | &lt;/body>
+      | &lt;template name="mySurface">
+      |    I am a full size Surface
+      | &lt;/template>
+    +snippet lang="javascript"
+      | Template.mySurface.rendered = function() { ... };
+      | Template.mySurface.famousEvents({
+      |   'click': function() { ... }
+      | });
     .footer gadicc
 
+template(name='slide13')
+  +Surface size='[900, undefined]' align='[.5, .5]' origin='[.5, .5]'
+    h2 Meetup Famous - Getting Started
+    p More advanced example
+    +snippet lang="spacebars"
+      | {{dstache}}#Scrollview}}
+      |   {{dstache}}famousEach items}}
+      |     {{dstache}}>Surface template="item" modifier="StateModifier" size="[undefined,200]"}}
+      |   {{dstache}}/famousEach}}
+      | {{dstache}}/Scrollview}}
+    +snippet lang="javascript"
+      | Template.body.helpers({
+      |   items: function() { return Items.find().fetch() }
+      | });
+      | Template.item.rendered = function() {
+      |   var modifier = FView.from(this).modifier;
+      |   modifier.setTransform(Transform.translate(-500,-500));
+      |   queue(100, function() {
+      |     modifier.setTransform(Transform.translate(0,0),
+      |       { duration: 500, curve: 'easeOut' } );
+      |  });
+      | };
+    p See
+      a(href="http://famous-views.meteor.com/views/GridLayout") GridLayout Example
+    .footer gadicc
 
-template(name="s1")
+template(name='slide14')
+  +Surface size='[900, undefined]' align='[.5, .5]' origin='[.5, .5]'
+    h2 Meetup Famous - Real Time Example
+    p Using
+      a(href="http://fview-lab.meteor.com/") FView-Lab
+    img(src="/img/fview-animate.jpg",style="border: 1px solid black; float: right; height: 10em; box-shadow: 1px 1px 3px #999")
+    ul
+      li Like we did in vanila Famous:
+      ul
+        li Show a Surface
+        li Use a Modifier
+        li Basic animation
+      br
+      li Setup a Scrollview
+      ul
+        li Use a collection
+        li Switch to fview-flexgrid
+
+    p From
+      a(href="http://famous-views.meteor.com/") famous-views.meteor.com
+    ul
+      li Reactivity, timbre, animations
+      li Testimonials:
+        a(href="http://poodler.meteor.com/") Poodler
+        | (
+        a(href="https://github.com/rteslaru/poodler") source
+        | )
+      li Plugins
+      ul
+        li
+          a(href="http://fview-flex.meteor.com/") fview-flex
+    .footer gadicc
+
+template(name='slide15')
+  +Surface size='[900, undefined]' align='[.5, .5]' origin='[.5, .5]'
+    h2 Meetup Famous - Famo.us Pros & Cons
+    ul
+      li Pros
+      ul
+        li Unbeatable performance and flexibility
+        li Solid foundation that's getting better and better
+        li Good attitude, Famo.us Labs, not going anywhere
+      li Cons
+      ul
+        li 0.3 release.  Not 100% stable nor complete.  Few tests.
+        li API changing for Mixed Mode around April.
+        li App "success stories" worked 1-on-1 with Famo.us
+        li Very few widgets, most stuff is very low level
+
+    p What does the future hold?
+    ul
+      li Mixed Mode
+      li jQuery
+      li Bootstrap
+      li "fview-ionic"
+
+    .footer gadicc
+
+template(name="slide16")
   +Surface size='[900, undefined]' align='[.5, .5]' origin='[.5, .5]'
     h2 Meetup Famous - That's it!
 
-    h3 Any Questions?  Useful links:
+    h3 Any Questions?  Some useful links:
 
     p famous-views / slidedeck
+    img(src="/img/meteor_famous_view_logo.svg",style="float: right; height: 5em")
     ul
-      a(href="http://famous-views.meteor.com/") famous-views.meteor.com
-      | - demo/docs, github, plugins
-      a(href="http://meetup-fview-ct.meteor.com/") meetup-fview-ct.meteor.com
-      | (
-      a(href="https://github.com/gadicc/meetup-fview-ct") sources
-      | )
+      li
+        a(href="http://famous-views.meteor.com/") famous-views.meteor.com
+        | - demo/docs, github, plugins
+      li
+        a(href="http://meetup-fview-ct.meteor.com/") meetup-fview-ct.meteor.com
+        | (
+        a(href="https://github.com/gadicc/meetup-fview-ct") sources
+        | )
 
     p famo.us
+    img(src="/img/famous_logo.jpg",style="float: right; height: 7em")
     ul
       li
         a(href="http://famo.us/") Official Famo.us Page
@@ -312,15 +450,10 @@ template(name="s1")
       li
         a(href="http://codepen.io/befamous/")
           | Famo.us CodePen
+
+    p Questions later?  Meetup group, GitHub issue.
     .footer gadicc
 
-// famous meteor parallel, famous funding
-// famous-views stars github downloads etc
-// raw famous vs -views templating, each, etc
-// what famous-views does
-// famous university, famous links
-// who needs physics, a lot of the demos are two engineery
-// famous now, pros and cons (few tests, very low level, not stable, mixed mode), etc
 // future: mixed mode, jquery, bootstrap, ionic
 
 // contact page, github email etc
